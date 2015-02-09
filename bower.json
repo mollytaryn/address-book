@@ -1,0 +1,21 @@
+{
+  "name": "address-book",
+  "version": "0.0.1",
+  "homepage": "https://github.com/mollytaryn/address-book",
+  "authors": [
+    "mollytaryn <mollytaryn@gmail.com>"
+  ],
+  "main": "public/index.html",
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "foundation": "~5.5.1"
+  }
+}
