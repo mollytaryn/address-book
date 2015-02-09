@@ -8,6 +8,10 @@ before_install:
   - export DISPLAY=:99.0
   - sh -e /etc/init.d/xvfb start
 script:
-  - npm run test -- karma.conf-ci.js
+  - npm run test -- karma.conf.js
 after_script:
   - cat ./coverage/PhantomJS*/lcov.info | ./node_modules/codeclimate-test-reporter/bin/codeclimate.js
+env:
+  global:
+    - secure: fwioKOYRP2xIPKpsINOdTGJrnvk1QJj7zC/5BH2130oXqj7whurAIBQllXjm3nWP9i6gk/lKq03dh8MUy4HbvHLmd9bV1/ixJE05n6/J9rO4EsISk1dAQfsIw5A9PwSJkW0IhR9g9IrsPp1yuCj0rUvJHHakcvlS0+vcje0Ea/E=
+    - secure: enfAM58sOmrMz2u9K6iQVpOtfRTMwMC7HLv3vEHXAd+Ilf2U3t3Vem42fEw0XZO9+ElH+vOjkg6mI7Cww2vkveu8lcRv9NTbYbfqdVd7ebsgl9IgRjZLACJF0t4n7MxVqNGteJW7bWxN9r2RgrNCt0Q3A19RlUJT4WHRa2KmcNk=
