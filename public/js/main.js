@@ -6,6 +6,23 @@ $(document).ready(function() {
   var $tbody = $('.tbody');
   var firebase_url = 'https://mollysfriends.firebaseio.com';
 
+//DELETE CONTACTS//
+
+  $($tbody).on('click', '.delete', function(event){
+    event.preventDefault();
+
+    var $tr = $(event.target).closest('tr');
+    var uuid = $tr.data('uuid');
+
+    $tr.remove();
+    deleteContactFromFirebase(uuid);
+  });
+
+  function deleteContactFromFirebase(uuid) {
+     var url = firebase_url + '/contact/' + uuid + '.json';
+     $.ajax(url, {type: 'DELETE'});
+  };
+
 //SUBMIT FORM - PUSH DATA TO API//
 
   $form.submit(function(event) {
@@ -25,10 +42,27 @@ $(document).ready(function() {
             email: $email.val(),
             instagram: $instagram.val()};
 
+    var $tr = $('<tr><td><img src="'+ $photoURL.val() +'"></td><td>'
+              + $firstName.val() + '</td><td>'
+              + $lastName.val() + '</td><td>'
+              + $phone.val() + '</td><td>'
+              + $email.val() + '</td><td>'
+              + $instagram.val() + '</td><td><input type="submit" class="delete" value="Delete"></td></tr>');
+
     var jsonData = JSON.stringify(contact);
     var url = firebase_url + '/contact.json';
     $.post(url, jsonData, function(data) {
+       $tr.attr('data-uuid', data.name);
+       $tbody.append($tr);
     });
+
+    $photoURL.val('');
+    $firstName.val('');
+    $lastName.val('');
+    $phone.val('');
+    $email.val('');
+    $instagram.val('');
+
   });
 
 
@@ -48,7 +82,6 @@ $(document).ready(function() {
               + data.email + '</td><td>'
               + data.instagram + '</td><td><input type="submit" class="delete" value="Delete"></td></tr>');
 
-    $tr.attr('data-uuid', data.firstName);
-   $tbody.append($tr);
+    $tbody.append($tr);
   };
 });
