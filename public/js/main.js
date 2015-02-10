@@ -53,6 +53,7 @@ $(document).ready(function() {
     var url = firebase_url + '/contact.json';
     $.post(url, jsonData, function(data) {
        $tr.attr('data-uuid', data.name);
+       console.log(data.name);
        $tbody.append($tr);
     });
 
