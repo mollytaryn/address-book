@@ -135,8 +135,6 @@ $(document).ready(function() {
     $instagram.val('');
   });
 
-
-
   //ADD ROW TO TABLE FUNCTION//
   function addRowToTable(uuid, data){
     var $tr = $('<tr><td><img src="'+data.photoURL+'"></td><td>'
@@ -147,4 +145,10 @@ $(document).ready(function() {
               + data.instagram + '</td><td><input type="submit" class="delete" value="Delete"></td></tr>');
     $tbody.append($tr);
   };
+
+  //LOGOUT FUNCTION//
+  $('.logout').click(function logout(){
+    fb.unauth();
+    location.reload(true);
+  });
 });

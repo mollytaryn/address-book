@@ -1,10 +1,28 @@
-.button.radius {
-  margin: 20px 0 0 20px;
-  float: left;
+h1 {
+  margin: 20px;
+  font-weight: 100;
+  background-color: #008CBA;
+  color: white;
+  padding: 5px;
 }
 
-form {
-  float: left;
+.login form {
+  margin: 20px;
+  width: 300px;
+}
+
+.app form {
+  /*float: left;*/
+  margin: 20px 20px 20px 20px;
+  border: 2px solid lightgrey;
+  background-color: #EEEEEE;
+}
+
+.app form .row {
+  margin: 0;
+}
+
+.button.radius {
   margin: 20px;
 }
 
@@ -20,6 +38,7 @@ form {
   border-radius: 8px;
   width: 127px;
   padding: 10px 0 10px 0;
+  margin-bottom: 20px;
 }
 
 table {
@@ -34,5 +53,10 @@ tr {
 
 img {
   max-height: 150px;
+}
+
+.logout {
+  float: right;
+  margin: 20px 40px 20px 20px;
 }
 
