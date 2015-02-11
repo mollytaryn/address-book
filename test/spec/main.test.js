@@ -6,5 +6,3 @@ describe('test suite', function () {
     false.should.be.false;
   });
 });
-
-describe('')

@@ -2,6 +2,10 @@
 
 'use strict';
 
+//var $ = require('jquery');
+//var _ = require('lodash');
+//var Firebase = require('firebase');
+
 $(document).ready(function() {
 
   var $form = $('.form');
