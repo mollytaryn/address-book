@@ -16,15 +16,17 @@ $(document).ready(function() {
 
   //LOGIN AND MAKE PULL FROM API//
   if(fb.getAuth()) {
-    //$('.login').remove();
-    $('.app').toggleClass('hidden');
+    $('.login').hide();
+    //$('.app').toggleClass('.hidden');
 
     usersFirebaseUrl = firebase_url + '/users/' + fb.getAuth().uid + '/data';
 
     $.get(usersFirebaseUrl + '/contact.json', function(data) {
-      Object.keys(data).forEach(function(uuid){
-        addRowToTable(uuid, data[uuid]);
-      });
+      if (data) {
+        Object.keys(data).forEach(function(uuid){
+          addRowToTable(uuid, data[uuid]);
+        });
+      }
     });
   }
 
@@ -80,6 +82,14 @@ $(document).ready(function() {
     });
   });
 
+//HIDE FORM//
+  $('.hidden form').hide();
+
+//ADD NEW CONTACT//
+  $('#newContact').click(function(event) {
+    event.preventDefault();
+    $('.hidden form').show();
+  });
 
 //DELETE CONTACTS//
 

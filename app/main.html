@@ -17,10 +17,11 @@
       </form>
     </div>
     <div class="app hidden">
+      <a href="#" id="newContact" class="button radius">+</a>
       <button class="logout">Logout</button>
+      <h2 class="welcome">Contacts<h2>
       <form action="#">
-        <a href="#" class="button radius">+</a>
-        <div class="row">
+                <div class="row">
           <div class="large-12 columns">
             <label>Photo URL
               <input type="text" name="photoURL"/>
@@ -64,7 +65,7 @@
         </div>
         <div class="row">
           <div class="large-3 columns">
-            <input type="submit" class="submit" value="Submit"/>
+            <input type="submit" class="submit button" value="Submit"/>
           </div>
         </div>
       </form>
@@ -84,7 +85,7 @@
         </tbody>
       </table>
     </div>
-  <script src="../bower_components/firebase/firebase.js"></script>
+  <script src="vendor/firebase.js"></script>
   <script src="vendor/jquery.min.js"></script>
   <script src="vendor/lodash.min.js"></script>
   <script src="js/main.js"></script>
