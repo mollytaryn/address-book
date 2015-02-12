@@ -17,7 +17,7 @@ $(document).ready(function() {
   //LOGIN AND MAKE PULL FROM API//
   if(fb.getAuth()) {
     $('.login').hide();
-    //$('.app').toggleClass('.hidden');
+    //$('.app').toggleClass('hidden');
 
     usersFirebaseUrl = firebase_url + '/users/' + fb.getAuth().uid + '/data';
 
@@ -147,6 +147,8 @@ $(document).ready(function() {
     $phone.val('');
     $email.val('');
     $instagram.val('');
+
+    $('.hidden form').hide();
   });
 
   //ADD ROW TO TABLE FUNCTION//
