@@ -21,7 +21,7 @@ $(document).ready(function() {
 
     usersFirebaseUrl = firebase_url + '/users/' + fb.getAuth().uid + '/data';
 
-    $.get(usersFirebaseUrl + '/contact.json', function(data) {
+    $.get(usersFirebaseUrl + '/contact.json?auth=' + fb.getAuth().token, function(data) {
       if (data) {
         Object.keys(data).forEach(function(uuid){
           addRowToTable(uuid, data[uuid]);
@@ -104,7 +104,7 @@ $(document).ready(function() {
   });
 
   function deleteContactFromFirebase(uuid) {
-     var url = usersFirebaseUrl + '/contact/' + uuid + '.json';
+     var url = usersFirebaseUrl + '/contact/' + uuid + '.json?auth=' + fb.getAuth().token;
      $.ajax(url, {type: 'DELETE'});
   };
 
@@ -135,7 +135,7 @@ $(document).ready(function() {
               + $instagram.val() + '</td><td><input type="submit" class="delete" value="Delete"></td></tr>');
 
     var jsonData = JSON.stringify(contact);
-    var url = usersFirebaseUrl + '/contact.json';
+    var url = usersFirebaseUrl + '/contact.json?auth=' + fb.getAuth().token;
     $.post(url, jsonData, function(data) {
        $tr.attr('data-uuid', data.name);
        $tbody.append($tr);
