@@ -1,0 +1,84 @@
+@import './foundation/scss/normalize';
+@import './foundation/scss/foundation';
+
+h1 {
+  margin: 20px;
+  font-weight: 100;
+  background-color: #008CBA;
+  border-radius: 5px;
+  color: white;
+  padding: 5px;
+}
+
+.welcome {
+  margin: 20px;
+  font-weight: 100;
+  border: 2px solid lightgrey;
+  border-radius: 5px;
+  color: #008CBA;
+  padding: 5px;
+
+}
+
+.addContact {
+  margin: 0 10px 10px 10px;
+  font-weight: 100;
+  color: #008CBA;
+  padding: 5px;
+}
+
+.login form {
+  margin: 20px;
+  width: 300px;
+}
+
+.app form {
+  /*float: left;*/
+  margin: 20px 20px 20px 20px;
+  border: 2px solid lightgrey;
+  background-color: #EEEEEE;
+  border-radius: 5px;
+  padding-top: 10px;
+}
+
+.app form .row {
+  margin: 0;
+}
+
+.button.radius {
+  margin: 20px;
+}
+
+.large-12.columns {
+  width: 400px;
+}
+
+.submit .delete .button {
+  background-color: #008CBA;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  width: 127px;
+  padding: 10px 0 10px 0;
+  margin-bottom: 20px;
+}
+
+table {
+  float: left;
+  margin: 10px 20px 20px 20px;
+  border-radius: 5px;
+}
+
+
+tr {
+  background-color: #EEEEEE;
+}
+
+img {
+  max-height: 150px;
+}
+
+.logout {
+  float: right;
+  margin: 20px 40px 20px 20px;
+}
